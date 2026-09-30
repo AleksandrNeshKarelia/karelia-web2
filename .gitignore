@@ -1,5 +1,6 @@
 # Node.js riippuvuudet
 node_modules/
+.vscode/
 
 # TypeScriptin käännetyt tiedostot
 dist/
