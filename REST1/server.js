@@ -55,19 +55,20 @@ app.get("/sanakirja", (req, res) => {
   res.json(sanakirja);
 });
 
-// GET /hae/:fin – hakee suomenkielisen sanan ja palauttaa englanninkielisen vastine
-app.get("/hae/:fin", (req, res) => {
+// GET /get/:fin – hakee suomenkielisen sanan ja palauttaa englanninkielisen vastine
+app.get("/get/:fin", (req, res) => {
   const fin = String(req.params.fin); // otetaan parametri
   const eng = sanakirja.find((sana) => sana.fin === fin); // etsitään tauluko-sanakirjasta suomenkielinen sana
   res.json(eng ? eng : { message: "Not found" }); //palautetaan tulos tai virheilmoitus
 });
 
-// POST /lisaa – lisää uuden sanaparin sanakirjaan ja tallentaa sen tiedostoon
-app.post("/lisaa", (req, res) => {
+// POST /post – lisää uuden sanaparin sanakirjaan ja tallentaa sen tiedostoon
+app.post("/post", (req, res) => {
   const { fin, eng } = req.body; // luetaan JSON-datasta sanat
   sanakirja.push({ fin, eng }); // lisätään sanapari taulukkoon
   fs_1.default.appendFileSync("sanakirja.txt", `${fin} ${eng}\n`, "utf8"); // tallennetaan uusi rivi sanakirja.txt -tiedostoon
   console.log(`Lisättiin sana: ${fin} ${eng}`); // lokitetaan lisäys
+  res.json({ message: `Lisättiin sana: ${fin} ${eng}` }); //palautetaan vahvistus
 });
 
 // Käynnistetään palvelin

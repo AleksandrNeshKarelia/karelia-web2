@@ -1,3 +1,5 @@
 talo house
 auto car
 
+mies man
+ruoka food
