@@ -1,0 +1,154 @@
+[
+  {
+    "id": "0fc5a4a4-157c-4cc1-99aa-3aa380ad25c6",
+    "timestamp": "2026-09-01T05:36:19.139Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "sampling": {},
+          "elicitation": {
+            "form": {},
+            "url": {}
+          },
+          "roots": {
+            "listChanged": true
+          },
+          "tasks": {
+            "list": {},
+            "cancel": {},
+            "requests": {
+              "sampling": {
+                "createMessage": {}
+              },
+              "elicitation": {
+                "create": {}
+              }
+            }
+          },
+          "extensions": {
+            "io.modelcontextprotocol/tasks": {},
+            "io.modelcontextprotocol/ui": {
+              "mimeTypes": [
+                "text/html;profile=mcp-app"
+              ],
+              "elicitation": {}
+            }
+          }
+        },
+        "clientInfo": {
+          "name": "mcp-inspector",
+          "version": "0.0.0"
+        }
+      },
+      "jsonrpc": "2.0",
+      "id": 0
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 0,
+      "result": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "current-time",
+          "version": "1.0.0"
+        }
+      }
+    },
+    "duration": 4048
+  },
+  {
+    "id": "0d1256b9-9f4d-4d60-bfbf-6a34085a12fa",
+    "timestamp": "2026-09-01T05:36:23.188Z",
+    "direction": "notification",
+    "origin": "client",
+    "message": {
+      "jsonrpc": "2.0",
+      "method": "notifications/initialized"
+    }
+  },
+  {
+    "id": "3a845e64-b626-4a5f-a37f-211cb60f9bc3",
+    "timestamp": "2026-09-01T05:36:23.194Z",
+    "direction": "request",
+    "origin": "client",
+    "message": {
+      "method": "tools/list",
+      "jsonrpc": "2.0",
+      "id": 1,
+      "params": {
+        "_meta": {
+          "progressToken": 1
+        }
+      }
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": {
+        "tools": [
+          {
+            "name": "current-time-and-date",
+            "title": "current Time and Date tool",
+            "description": "Get the current time and date.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false,
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            },
+            "execution": {
+              "taskSupport": "forbidden"
+            }
+          },
+          {
+            "name": "Hae_opinnaytetoiden_vaiheet_tietokannasta_lyhyesti",
+            "title": "Hae_opinnaytetoiden_vaiheet_tietokannasta_lyhyesti",
+            "description": "Hakee opinnaytetöiden vaiheet tietokannasta lyhyesti",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false,
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            },
+            "execution": {
+              "taskSupport": "forbidden"
+            }
+          },
+          {
+            "name": "Hae_vaiheen_selitys_tietokannasta",
+            "title": "Hae_vaiheen_selitys_tietokannasta",
+            "description": "Hakee vaiheen selityksen tietokannasta",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Vaiheen nimi"
+                }
+              },
+              "required": [
+                "query"
+              ],
+              "additionalProperties": false,
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            },
+            "execution": {
+              "taskSupport": "forbidden"
+            }
+          }
+        ]
+      }
+    },
+    "duration": 9
+  }
+]

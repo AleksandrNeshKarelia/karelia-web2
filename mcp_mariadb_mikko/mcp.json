@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "node": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "index.js"
+      ],
+      "cwd": "C:\\Users\\anttonenm\\OneDrive - Karelia Ammattikorkeakoulu Oy\\Tiedostot\\syksy2026\\web-ohjelmointi2\\mcp\\mcp_mariadb_mikko"
+    }
+  }
+}
